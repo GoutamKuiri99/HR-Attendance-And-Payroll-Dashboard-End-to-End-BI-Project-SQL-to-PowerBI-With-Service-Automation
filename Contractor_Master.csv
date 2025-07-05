@@ -1,0 +1,11 @@
+ContractorID,ContractorName,ContactPerson,ContactNumber,Email,DepartmentsSupplied,Status
+1,SkyTech Solutions,Ravi Sharma,9876543210,ravi@skytech.com,"IT, Maintenance",Active
+2,BuildWell Corp,Anita Mehra,9123456780,anita@buildwell.com,"Production, Admin",Active
+3,SecureHands Pvt Ltd,Imran Qureshi,9988776655,imran@securehands.com,"HR, Finance",Active
+4,Manpower India,Pooja Sinha,9001122334,pooja@manpowerindia.com,"Admin, Maintenance",Inactive
+5,TechForce,Sandeep Khurana,9871234560,sandeep@techforce.com,"IT, Production",Active
+6,WorkLine Services,Rajeev Kumar,7894561230,rajeev@workline.com,"Maintenance, Sales",Active
+7,ProHire Solutions,Meena Das,9517534561,meena@prohire.com,"HR, Sales",Active
+8,TalentEdge Pvt Ltd,Mohit Verma,8523697410,mohit@talentedge.com,"Finance, Admin",Active
+9,Reliable Workforce,Shalini Gupta,9638527410,shalini@reliablewf.com,"Production, Admin",Inactive
+10,NextGen Associates,Yogesh Patil,7891236540,yogesh@nextgen.com,"IT, Sales",Active
