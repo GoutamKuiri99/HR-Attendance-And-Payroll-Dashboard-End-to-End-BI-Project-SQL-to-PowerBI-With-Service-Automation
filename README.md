@@ -5,6 +5,43 @@ An enterprise-ready **Business Intelligence (BI)** solution built using:
 - 🗂️ **SQL Server (Views)** for backend data modeling  
 - 📈 **Power BI (Import Mode)** for interactive dashboards  
 - ☁️ **Power BI Service** for deployment with scheduled data refresh
+  
+---
+
+## 📘 Content Flow Table – HR Attendance & Payroll Dashboard
+
+| Section | Content Title | Purpose / Description |
+|--------|----------------|------------------------|
+| 1️⃣ | 📌 Business Problem | Highlights the challenges faced by HR such as manual attendance tracking, payroll errors, and scattered reporting systems. |
+| 2️⃣ | 🎯 Project Overview | Introduces the HR BI Dashboard and explains its goals of automation, accuracy, and centralized analytics. |
+| 3️⃣ | 🎯 Objectives | Defines measurable outcomes like attendance monitoring, leave tracking, net pay analysis, and policy transparency. |
+| 4️⃣ | 📚 Table of Contents | Page-wise list of report visuals like Attendance Dashboard, Payroll Summary, and Leave Trend. Makes navigation easier. |
+| 5️⃣ | 📁 Data Sources | Describes SQL Server Views and custom Power Query tables used for data integration and model building. |
+| 6️⃣ | 📊 Data Modeling | Explains the Galaxy Schema with multiple fact tables and shared dimensions used to design a robust HR data model. |
+| 7️⃣ | 🔗 Many-to-Many Handling | Showcases the bridge table used to resolve PF contribution date ambiguity using `Month_Year_Bridge`. |
+| 8️⃣ | 🖼️ Report Pages with Screenshots & Explanation | Visual tour of every report page with business explanation and why each one matters. |
+| 9️⃣ | 🛠️ Key Dashboard Features | Lists interactivity features like drillthrough, slicer sync, conditional formatting, and mobile responsiveness. |
+| 🔟 | ⚙️ Tech Stack | Lists all tools used: Power BI, SQL Server, Power Query, DAX, and Gateway. |
+| 1️⃣1️⃣ | 🔁 Scheduled Refresh | Explains how the report stays up-to-date using Power BI Service and Gateway auto-refresh. |
+| 1️⃣2️⃣ | 🔁 Dashboard Sharing | Describes the process of sharing dashboards securely with role-level access to HR, Finance, and Admins. |
+| 1️⃣3️⃣ | 📌 Conclusion | A high-impact summary of project benefits — transforming manual HR tasks into a strategic digital command center. |
+| 1️⃣4️⃣ | 👨‍💻 About the Author | Provides your contact, LinkedIn, and Medium profile links for recognition and networking. |
+
+
+> 🧭 **How to Use This Table:**  
+This content flow table acts as a roadmap to the entire HR Attendance & Payroll Dashboard project.  
+It provides a section-wise breakdown of every insight, visualization, and feature explained in the README.
+
+- 📂 From identifying the business problem and defining goals,  
+- 🧠 To showing data sources, schema modeling, and resolving complex relationships,  
+- 📈 To giving a visual walkthrough of each dashboard page,  
+- 🛠️ And finally showcasing the technologies, security, automation, and business impact —  
+
+This README captures the **end-to-end journey** of transforming raw HR data into a powerful, interactive BI solution.
+
+➡️ Use this table to **quickly navigate** and **understand each component** of the project.
+
+---
 
 ## 🚨 Business Problem
 
