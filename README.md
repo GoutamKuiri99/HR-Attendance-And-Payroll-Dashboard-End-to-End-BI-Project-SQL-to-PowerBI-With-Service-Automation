@@ -5,8 +5,14 @@ An enterprise-ready **Business Intelligence (BI)** solution built using:
 - 🗂️ **SQL Server (Views)** for backend data modeling  
 - 📈 **Power BI (Import Mode)** for interactive dashboards  
 - ☁️ **Power BI Service** for deployment with scheduled data refresh
+
   
----
+
+https://github.com/user-attachments/assets/70c4a7bb-a159-483c-be1b-6377609af286
+
+
+--- 
+
 
 ## 📘 Content Flow Table – HR Attendance & Payroll Dashboard
 
