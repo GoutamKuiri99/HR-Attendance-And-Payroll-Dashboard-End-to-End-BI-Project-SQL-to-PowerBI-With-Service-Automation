@@ -416,8 +416,108 @@ Brings clarity and promotes consistency in internal communication.
 
 ---
 
+## 🛠️ Key Dashboard Features
 
+🎯 **Drillthrough to Employee Profile:**  
+Clicking on any employee or contractor in summary charts opens a dedicated page showing their full attendance log, salary breakdown, and leave history.
 
+🔄 **Sync Slicers Across Pages:**  
+Filters like **Department**, **Month-Year**, or **Employee Status** stay consistent across all report pages — helping HRs explore data seamlessly.
+
+📁 **Dynamic Role-Based Filtering:**  
+Separate views for **Employees** and **Contractors**, with department-level slicing, using DAX-based role segmentation.
+
+🕵️ **Conditional Formatting for Attendance & Pay Health:**  
+Highlights abnormal behavior like high absenteeism, zero working hours, or large net pay deductions using intuitive color schemes.
+
+🧠 **Time Intelligence with DAX:**  
+Enables **MoM (Month-over-Month)**, **YTD**, and **Monthly Comparison** of attendance % and salary components.
+
+📂 **Drillable Leave Trends:**  
+Clicking on leave type charts shows individual employee leave logs and department-level leave patterns.
+
+📱 **Mobile-Responsive Layout:**  
+Dashboard layout adapts well to mobile and tablet screens on Power BI Service — handy for HRs on the move.
+
+🔐 **Security via Row-Level Filters:**  
+Each manager or department head sees only their team's data via Row-Level Security (RLS), ensuring privacy and compliance.
+
+📤 **Export-Ready Reports:**  
+Admin filters allow slicing and exporting employee-specific datasets directly into Excel — perfect for audits or MIS reporting.
+
+---
+
+## ⚙️ Tech Stack
+
+- 💻 **Power BI Desktop** – Dashboard design, data modeling, and DAX calculations  
+- 🧩 **SQL Server (Views)** – Source system with multiple view tables for HR data  
+- 📅 **Power Query** – Used for custom `My_Calendar` table creation and multiple data transformations:  
+  - Added columns like Month-Year, Financial Year, Week Number, IsWeekday, etc.  
+  - Cleaned and reshaped data from SQL views before loading to model  
+  - Shifted calculated columns to Power Query to avoid heavy DAX and improve performance  
+- 🔢 **DAX** – Calculations for Net Pay, Attendance %, PF, and time-based metrics  
+- ☁️ **Power BI Service** – Dashboard published and shared with HR/Admin teams  
+- 🔁 **Power BI Gateway** – Enables scheduled refresh from SQL Server
+  
+---
+
+## 🔁 Scheduled Data Refresh
+
+The dashboard is deployed on **Power BI Service** with a configured **Personal Gateway** to enable automated data refresh.
+
+- 🔗 Connected directly to **SQL Server Views**
+- ⏰ **Scheduled Refresh** set up to run daily for up-to-date insights
+- ✅ Ensures that HR and Payroll reports reflect the **latest attendance logs**, **leave records**, and **salary updates**
+- 🔒 Refresh setup is secured and monitored via Gateway Status in Power BI Service
+
+![image](https://github.com/user-attachments/assets/51cedf0a-4794-40dc-91ae-618b4d3695a4)
+
+----
+
+## 🔁 Sharing the Dashboard
+
+Once the scheduled refresh is enabled, the dashboard is shared with HR, Admin, and Finance stakeholders using the following approach:
+
+1. 📤 **Published to Power BI Service**  
+   The final report is deployed to the Power BI workspace for centralized access.
+
+2. 🔗 **Shared via Dashboard Link or Embedded in HR Portal**  
+   Direct sharing through Power BI link or embedded within the company’s internal tools like SharePoint or intranet portals.
+
+3. 🔐 **Role-Based Permissions for Secure Access**  
+   - **HR Managers** see department-wise employee data  
+   - **Finance Users** access payroll and PF components  
+   - **Admins** can export and manage full employee datasets  
+   Row-Level Security (RLS) ensures that each user sees only the data relevant to their role.
+
+--- 
+
+## 📌 Conclusion
+
+This HR Attendance & Payroll Dashboard is not just a report — it's a **strategic command center** for the entire HR ecosystem.
+
+It transforms scattered SQL data into a **visually-rich, centralized, and interactive platform** that empowers HR teams, streamlines payroll operations, and gives leadership **real-time insights** into the most valuable asset: the workforce.
+
+🚀 **Impact Delivered:**
+- Reduced payroll processing time from hours to minutes
+- Eliminated manual tracking errors in attendance & leave records
+- Enabled department heads to drill down into performance and absenteeism trends
+- Provided finance with accurate, role-wise salary distribution & PF compliance
+- Established a scalable system ready for multi-location HR expansion
+
+🔐 With row-level security, dynamic DAX intelligence, and automated refreshes, this dashboard isn’t just a project — it’s a **future-ready HR solution** that adapts, informs, and delivers value every single day.
+
+> 💬 _"From gut-feeling to data-backed decision-making — this dashboard changes the game for HR."_
+
+✨ Whether it’s optimizing shift schedules, auditing pay structures, or tracking attendance anomalies — **everything is now just a click away.**
+
+--- 
+
+## 👨‍💻 About the Author
+- **Name**: Goutam Kuiri
+- **Contact**: gkuiri26@gmail.com
+- **LinkedIn**: [Goutam Kuiri](https://www.linkedin.com/in/goutam-kuiri-949b632a6)
+- **Medium**: [Goutam Kuiri](https://medium.com/@goutamkuiri)
 
 
 
