@@ -96,6 +96,41 @@ Make sure your Power BI Desktop or Power BI Service is properly authenticated wi
 - Verify **Data Privacy Levels** to avoid refresh errors
 
 ---
+## 📊 Data Modeling
+
+The data model used in this project is based on a **Galaxy Schema** (also known as a Fact Constellation Schema), which is well-suited for handling complex HR and Payroll systems involving multiple business processes.
+
+![image](https://github.com/user-attachments/assets/4c5c0b87-7540-4529-90cf-77b9d11370c6)
+
+
+### 🛰️ Why Galaxy Schema?
+
+This model includes **multiple fact tables**, each focusing on a different HR function:
+
+| Fact Table | Description |
+|------------|-------------|
+| `VIEW_ATTENDANCE_LOG` | Stores daily check-in/out logs and attendance status |
+| `VIEW_LEAVE_RECORD_TABLE` | Captures employee leave requests and approvals |
+| `VIEW_PAYROLL_TABLE` | Holds monthly payroll details including earnings and deductions |
+| `VIEW_PF_CONTRIBUTION` | Tracks Provident Fund contributions across employees |
+
+These fact tables share a set of common **dimension tables**, such as:
+
+| Dimension Table | Description |
+|------------------|-------------|
+| `VIEW_EMPLOYEE_MASTER` | Employee demographic and role data |
+| `VIEW_CONTRACTOR_MASTER` | Contractor profile data |
+| `VIEW_SHIFT_MASTER` | Shift definitions and timings |
+| `VIEW_HOLIDAY_CALENDAR` | Calendar of company-wide, regional, and national holidays |
+| `My_Calendar` | Custom date dimension for time intelligence functions |
+
+### 🔗 Relationships & Optimization:
+
+- Many-to-one relationships from fact to dimension tables
+- Centralized `My_Calendar` enables time-based filters and YTD/MTD/QTD analysis
+- DAX measures handle aggregations and KPIs
+- Ready for implementing **Row-Level Security (RLS)** via bridge tables if required
+
 
 
 
