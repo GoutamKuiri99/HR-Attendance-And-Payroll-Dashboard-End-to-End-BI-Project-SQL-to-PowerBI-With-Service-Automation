@@ -5,11 +5,10 @@ An enterprise-ready **Business Intelligence (BI)** solution built using:
 - 🗂️ **SQL Server (Views)** for backend data modeling  
 - 📈 **Power BI (Import Mode)** for interactive dashboards  
 - ☁️ **Power BI Service** for deployment with scheduled data refresh
-
   
+--- 
 
-https://github.com/user-attachments/assets/70c4a7bb-a159-483c-be1b-6377609af286
-
+https://github.com/user-attachments/assets/48f75ef1-2730-41af-b4f9-afc5507beec3
 
 --- 
 
