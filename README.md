@@ -294,20 +294,21 @@ Helpful for HR to identify overworking or underworking staff and enforce work-li
 ### 📈 7. Attendance Trends Over Time
 
 **What it Shows:**  
-- Monthly summary for Present, Absent, Leave, Half-Day  
-- Health Score (Attendance %) for each month:
-  - Highest: Nov (101.92%)
-  - Lowest: Feb (69.64%)
+- Month-wise attendance breakdown including:
+  - ✅ Present
+  - 🚫 Absent
+  - 💤 Leave
+  - 🌓 Half-Day
 - Department-wise monthly attendance performance
-  - Avg across departments: **83.90%**
+  - 📊 Average across all departments: **83.90%**
 
 **Why it Matters:**  
-Reveals seasonal dips, absenteeism spikes, and overall policy adherence.
+This report helps HR identify **seasonal patterns**, spot **departments with low attendance**, and enforce better workforce planning. It also supports policy reviews by highlighting **absenteeism spikes** and **monthly behavioral trends**.
 
-![image](https://github.com/user-attachments/assets/134d22fa-8c4c-454b-a0c2-0b0e13622ed6)
+![image](https://github.com/user-attachments/assets/98bb2605-0ecf-4010-85be-1d5d5e76155a)
 
 ---
-### 💡 7. Attendance Health Score Analysis
+### 💡 8. Attendance Health Score Analysis
 
 **What it Shows:**  
 - Visualizes **Attendance Health Score** — the percentage of employees present across each **month** and **department**
@@ -334,7 +335,14 @@ This section helps HR monitor presence patterns across months and departments, i
 **Why it Matters:**  
 Highlights patterns in voluntary vs. unplanned absenteeism and helps refine leave policies.
 
-🖼️ *Screenshot: Leave_Absent_Trend.png*
+### **Leave**
+![image](https://github.com/user-attachments/assets/86e0ea09-dd40-4816-a444-5cef056b1f83)
+
+#### **Absence Rate**
+![image](https://github.com/user-attachments/assets/aabcbbb1-726b-4885-bf21-c105dcc2a962)
+
+#### **Leave Application Count (Type-wise)**
+![image](https://github.com/user-attachments/assets/7c16d99c-cb61-4918-8c92-e4c855042527)
 
 ---
 
@@ -350,7 +358,12 @@ Highlights patterns in voluntary vs. unplanned absenteeism and helps refine leav
 **Why it Matters:**  
 Helps HR/Finance review salary alignment and fairness across designations and teams.
 
-🖼️ *Screenshot: Payroll_Summary.png*
+![image](https://github.com/user-attachments/assets/c1a21956-196b-487e-bea4-7cb95f617f37)
+
+![image](https://github.com/user-attachments/assets/80022c7f-8cbd-4b6e-8b0b-efe17ec7acf2)
+
+![image](https://github.com/user-attachments/assets/dcb296aa-6c47-4321-b515-a4cc9f2834b8)
+
 
 ---
 
@@ -364,7 +377,10 @@ Helps HR/Finance review salary alignment and fairness across designations and te
 **Why it Matters:**  
 Ensures transparency and audit compliance for statutory contributions.
 
-🖼️ *Screenshot: PF_Contribution_Analysis.png*
+![image](https://github.com/user-attachments/assets/6480f778-1ef7-4ab0-bc20-ab3a631450e2)
+
+![image](https://github.com/user-attachments/assets/2959e6bd-6441-4322-9550-73ff88760596)
+
 
 ---
 
@@ -380,7 +396,7 @@ Ensures transparency and audit compliance for statutory contributions.
 **Why it Matters:**  
 Empowers HR/Admin to generate quick department-wise reports and perform ad hoc analysis.
 
-🖼️ *Screenshot: Admin_Data_Export.png*
+![image](https://github.com/user-attachments/assets/162e049a-d49c-4c85-ad32-0f6196042897)
 
 ---
 
@@ -396,7 +412,7 @@ Summarized HR policies such as:
 **Why it Matters:**  
 Brings clarity and promotes consistency in internal communication.
 
-🖼️ *Screenshot: HR_Policies.png*
+![image](https://github.com/user-attachments/assets/ddd2aff1-a244-4b35-8b1f-f5690fb0ab43)
 
 ---
 
