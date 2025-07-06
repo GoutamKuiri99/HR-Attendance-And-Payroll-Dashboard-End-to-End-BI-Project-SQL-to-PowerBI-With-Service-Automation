@@ -131,6 +131,276 @@ These fact tables share a set of common **dimension tables**, such as:
 - DAX measures handle aggregations and KPIs
 - Ready for implementing **Row-Level Security (RLS)** via bridge tables if required
 
+## 🔗 Handling Many-to-Many Relationship
+
+In this HR dashboard project, a complex **many-to-many relationship** was resolved using a well-structured **bridge table** with controlled relationship directions and clean time-based joins.
+
+---
+
+### 💡 Problem Scenario
+
+The `VIEW_PF_CONTRIBUTION` table contains multiple entries per employee for each month, and directly linking its `Date` column to the `My_Calendar` table caused ambiguity due to **repeating Month-Year combinations** in both tables.
+
+Both:
+- `VIEW_PF_CONTRIBUTION[Month_Year]`
+- `My_Calendar[Month_Year]`
+
+had duplicate values, which led to a **many-to-many cardinality conflict** — making DAX measures and time-based visuals unreliable.
+
+---
+
+### 🛠️ Solution: Month-Year Bridge Table
+
+To resolve this, a custom **bridge table** named `Month_Year_Bridge` was created, holding only **unique Month-Year combinations**, and it serves as an intermediary between both tables.
+
+#### 📂 Table: `Month_Year_Bridge`
+
+---
+
+### 📅 My_Calendar Table
+
+The `My_Calendar` table is a **custom date dimension table** created using Power Query. It includes:
+
+- `Date`
+- `Month`
+- `Month_Num`
+- `Quarter`
+- `Year`
+- `Month_Year` (formatted as "MMM-YYYY")
+
+This allows advanced **time intelligence** (YTD, MTD, QTD) across the dashboard.
+
+---
+
+### 🔗 Relationship Structure
+
+![image](https://github.com/user-attachments/assets/b9d13971-757e-410f-a4ad-d1e7e3b6406b)
+
+- `My_Calendar[Month_Year]` → `Month_Year_Bridge[Month_Year]`: **Many-to-One**
+- `Month_Year_Bridge[Month_Year]` → `VIEW_PF_CONTRIBUTION[Month_Year]`: **One-to-Many**
+- Cross-filter direction: **Both**
+
+### 🛠️ Why This Works
+
+- The bridge table acts as a mediator, preventing ambiguity in filtering between two datasets having repeated `Month_Year` values.
+- With **bi-directional filters**, any selection in `My_Calendar` will propagate through the bridge and correctly filter `PF Contribution` data.
+- This maintains full compatibility with other date-based measures like **Monthly PF Totals**, **YTD**, and **Monthly Comparison**.
+
+### ✅ Result
+
+- Seamless time intelligence for PF-related visuals.
+- Cleaner and scalable data model.
+- Accurate monthly aggregation across all date-synced tables.
+
+## 🖼️ Report Pages with Screenshots & Explanation
+
+Below is a walkthrough of the key report pages in the HR Attendance & Payroll Dashboard. Each page is designed to answer a specific business question using clean, interactive visuals and impactful metrics.
+
+---
+
+### 📌 1. HR Overview
+
+**What it Shows:**  
+Key HR KPIs such as:
+- **Total Employees:** 100
+- **Active Employees:** 80
+- **Resigned Employees:** 20
+- **Contractors:** 10 (Active: 8)
+- **Overall Attendance Rate:** 83.34%
+
+**Why it Matters:**  
+Gives stakeholders a one-glance health check of the overall workforce and hiring-retention trend.
+
+![image](https://github.com/user-attachments/assets/467fab9f-7bab-4e13-9d70-51d386e2feb3)
+
+---
+
+### 👥 2. Employee & Contractor Directory
+
+**What it Shows:**  
+- Department-wise Employee Listing
+- Detailed employee profiles: Name, DOJ, Department, Designation
+- All 10 contractors listed with contact persons and phone numbers
+
+**Why it Matters:**  
+Acts as a live reference directory, eliminating manual lookup from HR spreadsheets.
+
+![image](https://github.com/user-attachments/assets/61be96ae-7f92-482b-870a-485004cc61d7)
+
+---
+
+### 🧩 3. Workforce Composition
+
+**What it Shows:**  
+- Department-wise employee distribution
+- Donut chart for contractor spread (uniformly distributed)
+
+**Why it Matters:**  
+Helps identify over- or under-staffing across business units.
+
+![image](https://github.com/user-attachments/assets/8864bb7c-67ff-4eed-9cd5-f1baf79600ec)
+
+---
+
+### 🕒 4. Shift & Holiday Analysis
+
+**What it Shows:**  
+- Total shifts defined: 7  
+- Next upcoming holiday: **15 August**
+- Holiday classification: National (10), Regional (6), Company (4)
+- Detailed shift timings per role/division
+
+**Why it Matters:**  
+Crucial for workforce scheduling and planning long weekends or business closures.
+
+![image](https://github.com/user-attachments/assets/a595bea5-031b-4fb2-9fbe-83f1a85ba207)
+
+
+---
+
+### 📅 5. Attendance Analysis
+
+**What it Shows:**  
+- Daily status summary: Present, Leave, Half-Day, Absent  
+- Actual in-time and out-time stamps  
+- Sample drilldown for employees like **Aarti Tiwari**:
+  - Avg In-Time: 09:15
+  - Avg Out-Time: 18:15–19:00
+  - Avg Working Hours: ~9 hrs/day
+
+**Why it Matters:**  
+Enables micro-level analysis of employee punctuality and attendance discipline.
+
+![image](https://github.com/user-attachments/assets/b9df279d-53b3-4bcc-a70f-a6cdaa582bb3)
+
+---
+
+### 👤 6. Employee Attendance Behavior
+
+**What it Shows:**  
+- Trend visuals for each employee:
+  - In-Time Pattern
+  - Out-Time Pattern
+  - Working Hours Trend
+
+**Why it Matters:**  
+Helpful for HR to identify overworking or underworking staff and enforce work-life balance.
+
+![image](https://github.com/user-attachments/assets/f9ac4177-9f1d-4632-81f9-7f0043b20a88)
+
+
+---
+
+### 📈 7. Attendance Trends Over Time
+
+**What it Shows:**  
+- Monthly summary for Present, Absent, Leave, Half-Day  
+- Health Score (Attendance %) for each month:
+  - Highest: Nov (101.92%)
+  - Lowest: Feb (69.64%)
+- Department-wise monthly attendance performance
+  - Avg across departments: **83.90%**
+
+**Why it Matters:**  
+Reveals seasonal dips, absenteeism spikes, and overall policy adherence.
+
+![image](https://github.com/user-attachments/assets/134d22fa-8c4c-454b-a0c2-0b0e13622ed6)
+
+---
+### 💡 7. Attendance Health Score Analysis
+
+**What it Shows:**  
+- Visualizes **Attendance Health Score** — the percentage of employees present across each **month** and **department**
+- Tracks attendance trends and highlights overall engagement levels
+- Example stats:
+  - 📈 Highest Attendance %: **November – 101.92%**
+  - 📉 Lowest Attendance %: **February – 69.64%**
+  - 🧾 Department-Wise Average: **83.90%**
+
+**Why it Matters:**  
+This section helps HR monitor presence patterns across months and departments, identify problem areas, and take corrective actions to maintain workforce productivity.
+
+![image](https://github.com/user-attachments/assets/03b0ae75-d159-4917-ba25-cbd0fece5a17)
+
+---
+
+### 📉 8. Leave & Absence Trends
+
+**What it Shows:**  
+- Separate trends for:
+  - Leave Application Count (Type-wise)
+  - Absence Rate (with department filter)
+
+**Why it Matters:**  
+Highlights patterns in voluntary vs. unplanned absenteeism and helps refine leave policies.
+
+🖼️ *Screenshot: Leave_Absent_Trend.png*
+
+---
+
+### 💰 9. Payroll Summary
+
+**What it Shows:**  
+- Net Pay distribution:
+  - **By Role**
+  - **By Department**
+  - **By Contractor Status**
+- Salary component breakdown (Basic, HRA, Allowances, Deductions, Net Pay)
+
+**Why it Matters:**  
+Helps HR/Finance review salary alignment and fairness across designations and teams.
+
+🖼️ *Screenshot: Payroll_Summary.png*
+
+---
+
+### 🏦 10. PF Contribution Analysis
+
+**What it Shows:**  
+- Monthly PF contributions for employees
+- Split: Employee Share vs. Employer Share
+- Breakdown by Department and Role
+
+**Why it Matters:**  
+Ensures transparency and audit compliance for statutory contributions.
+
+🖼️ *Screenshot: PF_Contribution_Analysis.png*
+
+---
+
+### ⚙️ 11. Admin Filters & Export
+
+**What it Shows:**  
+- Filters to slice by:
+  - Contractor
+  - Department
+  - Designation
+- Direct export to Excel button for customized datasets
+
+**Why it Matters:**  
+Empowers HR/Admin to generate quick department-wise reports and perform ad hoc analysis.
+
+🖼️ *Screenshot: Admin_Data_Export.png*
+
+---
+
+### 📜 12. HR Policies
+
+**What it Shows:**  
+Summarized HR policies such as:
+- Leave eligibility
+- Shift policies
+- Working hour structure
+- Rules for overtime and weekly offs
+
+**Why it Matters:**  
+Brings clarity and promotes consistency in internal communication.
+
+🖼️ *Screenshot: HR_Policies.png*
+
+---
+
+
 
 
 
